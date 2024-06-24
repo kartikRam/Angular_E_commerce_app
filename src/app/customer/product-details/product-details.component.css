@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+.container {
+    padding: 15px 9%;
+    padding-bottom: 100px;
+}
+
+.heading {
+    padding-bottom: 15px;
+    color: #526D82;
+    text-shadow: 0 5px 10px rgba(0,0,0,.2);
+    font-size: 50px;
+    text-align: center; /* Center align heading */
+}
+
+.box-container {
+    display: flex;
+    justify-content: center; /* Center align boxes */
+    gap: 30px; /* Gap between boxes */
+    flex-wrap: wrap; /* Wrap boxes to new line on smaller screens */
+}
+
+.box {
+    width: 500px; /* Fixed width for the box */
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background: #fff;
+    text-align: left;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items horizontally */
+}
+
+.box img {
+    width: 100%; /* Make image responsive */
+    max-width: 400px; /* Limit image width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space below the image */
+}
+
+.details {
+    width: 100%;
+    text-align: left;
+}
+
+.details h2 {
+    color: #3c3838;
+    font-size: 22px;
+    padding-bottom: 10px;
+}
+
+.details p {
+    color: #3c3838;
+    font-size: 15px;
+    line-height: 1.8;
+    padding-bottom: 10px;
+}
+
+.product-color {
+    display: inline-block;
+    border: 3px solid #ddd;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: middle; /* Align color dot vertically */
+}
+
+.actions {
+    display: flex;
+    gap: 10px; /* Space between action buttons */
+    margin-top: 20px;
+}
+
+.quantity-group {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.quantity-group button {
+    padding: 10px 15px;
+    background-color: #a877a8;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.quantity-group button:hover {
+    background-color: #8c5b8c;
+}
+
+.quantity-group input {
+    padding: 10px;
+    width: 60px;
+    text-align: center;
+    border: 1px solid plum;
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 10px 25px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.add-to-cart, .remove-from-cart {
+    background: #de7906;
+}
+
+.buy-now, .go-to-cart {
+    background: #27374D;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    .box {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .quantity-group {
+        margin-left: auto; /* Align quantity group to right on smaller screens */
+        margin-right: 30px; /* Right margin on smaller screens */
+    }
+}

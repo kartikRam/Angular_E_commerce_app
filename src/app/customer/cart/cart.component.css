@@ -1,0 +1,158 @@
+@import url(https://fonts.googleapis.com/css?family=Fredoka+One);
+
+/* General Resets */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font: inherit;
+    vertical-align: baseline;
+    outline: none;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 62.5%;
+    line-height: 1;
+    color: #414141;
+    background: #caccf7 url('https://i.imgur.com/Syv2IVk.png');
+    padding: 25px 0;
+}
+
+/* Header Styling */
+#title {
+    text-align: center;
+    padding: 10px 0;
+}
+
+#title h1 {
+    font-family: 'Fredoka One', sans-serif;
+    font-weight: bold;
+    color: #27374D;
+    font-size: 3.5em;
+    line-height: 1.1em;
+    padding: 6px 0;
+}
+.extracosts{
+  color: black;
+}
+/* Page Styling */
+#w {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 15px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* Table Styling */
+#cart {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.2em;
+    color: #414141;
+}
+
+#cart th, #cart td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+#cart th {
+    background-color: #f0f0f0;
+}
+
+#cart .first {
+    width: 20%;
+}
+
+#cart .second {
+    width: 10%;
+}
+
+#cart .third {
+    width: 40%;
+}
+
+#cart .fourth {
+    width: 20%;
+}
+
+#cart .fifth {
+    width: 10%;
+}
+
+#cart img.thumb {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Checkout Button Styling */
+#submitbtn {
+    width: 150px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.3em;
+    letter-spacing: 0.05em;
+    color: #fff;
+    background-color: #27374D;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#submitbtn:hover {
+    background-color: #9DB2BF;
+}
+
+/* Light Text Styling */
+.light {
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: normal;
+}
+
+/* Total Price Styling */
+.totalprice {
+    background: rgb(46, 36, 46);
+    color: #fff;
+}
+
+.totalprice .thick {
+    font-size: 1.7em;
+    font-weight: bold;
+}
+
+/* Remove Button Styling */
+.remove {
+    cursor: pointer;
+    position: relative;
+    right: 12px;
+    top: 5px;
+}
+
+.remove img {
+    vertical-align: middle;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #w {
+        width: 95%;
+    }
+
+    #cart .third {
+        width: 30%;
+    }
+
+    #cart .fifth {
+        display: none;
+    }
+}

@@ -1,0 +1,26 @@
+<div class="container">
+    <h1 class="heading">{{productDetails?.title}}</h1>
+
+    <div class="box-container">
+        <div class="box">
+            <img src="{{productDetails?.image}}" alt="">
+            <div class="details">
+                <h2>Price: $ {{productDetails?.price}}</h2>
+                <p>Color: <span [style.backgroundColor]="productDetails?.color" class="product-color"></span></p>
+                <p>Category: {{productDetails?.categories}}</p>
+                <p>{{productDetails?.desc}}</p>
+            </div>
+            <div class="actions">
+                <a (click)="addToCart()" *ngIf="!removeCartLink" class="btn add-to-cart">Add To Cart</a>
+                <a (click)="removeFromCart()" *ngIf="removeCartLink" class="btn remove-from-cart">Remove From Cart</a>
+                <a (click)="buyNow()" *ngIf="!removeCartLink" class="btn buy-now">Buy Now</a>
+                <a routerLink="/cart" *ngIf="removeCartLink" class="btn go-to-cart">Go To Cart</a>
+            </div>
+            <div class="quantity-group" *ngIf="!removeCartLink">
+                <button (click)="handleQuantity('min')" style="background-color: #9DB2BF;">-</button>
+                <input type="text" value="{{productQuantity}}" style="border: none;">
+                <button (click)="handleQuantity('plus')" style="background-color: #9DB2BF;">+</button>
+            </div>
+        </div>
+    </div>
+</div>

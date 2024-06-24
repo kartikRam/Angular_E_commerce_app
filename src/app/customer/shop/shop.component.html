@@ -1,0 +1,21 @@
+<div class="container">
+    <h1 class="heading"> Products</h1>
+
+    <div class="horizontal-scroll-container">
+        <div class="box-container" fxLayout="row" fxLayoutGap="16px">
+            <mat-card class="box" *ngFor="let item of shopProductwithCart">
+                <img mat-card-image class="product-image" [src]="item.image" routerLink="/product-details/{{item._id}}">
+                <mat-card-title>{{item.title}}</mat-card-title>
+                <mat-card-content>
+                    <p>Price: $ {{item.price}}</p>
+                    <p>{{item.color}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <a class="view_details" routerLink="/product-details/{{item._id}}">View Details</a>&nbsp;
+                    <a (click)="addToCart(item._id)" *ngIf="!item.removeCart" class="view_details">Add To Cart</a>
+                    <a (click)="removeFromCart(item._id)" *ngIf="item.removeCart" class="view_details">Remove From Cart</a>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

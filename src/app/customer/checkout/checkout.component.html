@@ -1,0 +1,39 @@
+<h1 class="header">Address And Payment</h1>
+
+<div class="content-container">
+    <div class="login-box">
+        <h2>Add Shipping Address</h2>
+        <form [formGroup]="addressForm" (ngSubmit)="submitOrder()">
+            <div class="user-box">
+                <input formControlName="email" type="text" id="email" name="email" placeholder=" " />
+                <label for="email">Email</label>
+            </div>
+            <div class="user-box">
+                <textarea formControlName="address" id="address" name="address" cols="30" rows="2" placeholder=" "></textarea>
+                <label for="address">Address</label>
+            </div>
+            <div class="user-box">
+                <input formControlName="contact" type="text" id="contact" name="contact" placeholder=" " />
+                <label for="contact">Contact</label>
+            </div>
+            <button type="submit">
+                <a>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Submit
+                </a>
+            </button>
+        </form>
+    </div>
+
+    <div class="pay-method">
+        <h2>Total Amount: <b>$ {{totalPrice}}</b></h2>
+        <h2>Payment Method: <b>Pay On Delivery</b></h2>
+    </div>
+
+    <div class="order-msg">
+        <h2>{{orderMsg}}</h2>
+    </div>
+</div>

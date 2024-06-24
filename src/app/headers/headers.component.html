@@ -1,0 +1,71 @@
+<div class="container">
+    <mat-toolbar color="primary">
+      <span class="header" routerLink="/">
+        <mat-icon>superpowers</mat-icon>
+        <span class="title">My Shopping Website</span>
+      </span>
+  
+      <span class="spacer"></span>
+  
+      <div class="nav-search" *ngIf="menuType !== 'seller'" >
+        <mat-form-field class="search-input" appearance="outline" >
+           
+          <input matInput #searchInput (keyup)="searchProduct($event)" (blur)="hideSearch()"
+          style="color: white;"
+          >
+          
+          <button mat-icon-button matSuffix (click)="onSearch(searchInput.value)">
+            <mat-icon>search</mat-icon>
+          </button>
+        </mat-form-field>
+  
+        <ul class="suggested-result" *ngIf="searchResults && searchResults.length > 0">
+          <li *ngFor="let item of searchResults" (mousedown)="redirectToDetails(item._id)">
+            <a>{{item.title}}</a>
+          </li>
+        </ul>
+      </div>
+  
+      <div [ngSwitch]="menuType" class="list" fxLayout="row" fxLayoutAlign="end center">
+        <ul *ngSwitchCase="'default'" fxLayout="row" fxLayoutAlign="center center" class="nav-list">
+          <li><a mat-button routerLink="/">Shop</a></li>
+          <li><a mat-button routerLink="/cart">Cart [{{cartCount}}]</a></li>
+          <!-- <li><a mat-button routerLink="/seller-signup">Seller</a></li> -->
+          <li><a mat-button routerLink="/customer-signup">Customer</a></li>
+        </ul>
+  
+        <ul *ngSwitchCase="'customer'" fxLayout="row" fxLayoutAlign="center center" class="nav-list">
+          <li><a mat-button routerLink="/">Shop</a></li>
+          <li><a mat-button routerLink="/cart">Cart [{{cartCount}}]</a></li>
+          <li><a mat-button routerLink="/orders">Orders</a></li>
+          <li><a mat-button (click)="onCustomerLogout()">Logout</a></li>
+          <div class="dropdown">
+            <button mat-icon-button [matMenuTriggerFor]="customerMenu">
+              <mat-icon>info</mat-icon>
+            </button>
+            <mat-menu #customerMenu="matMenu">
+              <button mat-menu-item>{{userName | titlecase}}!</button>
+            </mat-menu>
+          </div>
+        </ul>
+  
+        <!-- Uncomment when necessary -->
+        <!--
+        <ul *ngSwitchCase="'seller'" fxLayout="row" fxLayoutAlign="center center" class="nav-list">
+          <li><a mat-button routerLink="/products">Products</a></li>
+          <li><a mat-button routerLink="/products/upload">Add</a></li>
+          <li><a mat-button (click)="onSellerLogout()">Logout</a></li>
+          <div class="dropdown">
+            <button mat-icon-button [matMenuTriggerFor]="sellerMenu">
+              <mat-icon>info</mat-icon>
+            </button>
+            <mat-menu #sellerMenu="matMenu">
+              <button mat-menu-item>Welcome {{userName | titlecase}}!</button>
+            </mat-menu>
+          </div>
+        </ul>
+        -->
+      </div>
+    </mat-toolbar>
+  </div>
+  
